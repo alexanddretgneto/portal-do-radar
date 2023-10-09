@@ -1,0 +1,49 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Notícias</title>
+</head>
+<body>
+    <h1>Notícias</h1>
+    <ul>
+        {% for noticia in noticias_list %}
+            <li>{{ noticia }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Notícias</title>
+</head>
+<body>
+    <h1>Notícias</h1>
+    <ul>
+        {% for noticia in noticias_list %}
+            <li>
+                <h2>{{ noticia.title }}</h2>
+                <img src="{{ noticia.image_url }}" alt="{{ noticia.title }}">
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Portal do Radar</title>
+</head>
+<body>
+    <h1>Notícias Portal do Radar em Tempo Real</h1>
+    <ul>
+        {% for noticia in noticias_list %}
+            <li>
+                <h2><a href="{{ noticia.news_link }}">{{ noticia.title }}</a></h2>
+                <img src="{{ noticia.image_url }}" alt="{{ noticia.title }}">
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
