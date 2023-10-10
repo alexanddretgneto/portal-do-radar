@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resultados da Pesquisa</title>
+</head>
+<body>
+    <h1>Resultados da Pesquisa</h1>
+    <ul>
+        {% for produto in produtos %}
+            <li>
+                <img src="{{ produto.2 }}" alt="{{ produto.0 }}" width="160" height="160">
+                <p>Produto: {{ produto.0 }}</p>
+                <p>Preço: R$ {{ produto.1|floatformat:2 }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

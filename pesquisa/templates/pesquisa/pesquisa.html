@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pesquisar Produto</title>
+</head>
+<body>
+    <h1>Pesquisar Produto</h1>
+    <form method="post">
+        {% csrf_token %}
+        <input type="text" name="produto_nome" placeholder="Nome do produto">
+        <input type="submit" value="Pesquisar">
+    </form>
+</body>
+</html>
