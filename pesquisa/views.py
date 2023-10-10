@@ -25,14 +25,17 @@ def pesquisar_produto(request):
             titulo = produto.find('h2', class_='ui-search-item__title')
             preco_element = produto.find('span', class_='andes-money-amount__fraction')
             imagem_element = produto.find('img', class_='ui-search-result-image__element')
+            link_element = produto.find('a', class_='ui-search-link')  # Adicione esta linha para encontrar o elemento do link
 
-            if titulo and preco_element and imagem_element:
+            if titulo and preco_element and imagem_element and link_element:
                 titulo_text = titulo.text.strip()
                 preco_text = preco_element.text.strip()
                 preco_numero = float(preco_text.replace(',', '').replace('.', ''))
                 imagem_url = imagem_element.get('src')
+                url_do_produto = link_element.get('href')  # Obtenha o URL do produto a partir do elemento do link
 
-                lista_produtos.append((titulo_text, preco_numero, imagem_url))
+                lista_produtos.append((titulo_text, preco_numero, imagem_url, url_do_produto))
+
 
         lista_produtos_ordenada = sorted(lista_produtos, key=lambda x: x[1])
 

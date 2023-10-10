@@ -8,9 +8,11 @@
     <ul>
         {% for produto in produtos %}
             <li>
-                <img src="{{ produto.2 }}" alt="{{ produto.0 }}" width="160" height="160">
-                <p>Produto: {{ produto.0 }}</p>
-                <p>Preço: R$ {{ produto.1|floatformat:2 }}</p>
+                <a href="{{ produto.3 }}" target="_blank"> <!-- Adicione o link com a variável produto.3 -->
+                    <img src="{{ produto.2 }}" alt="{{ produto.0 }}" width="160" height="160">
+                    <p>Produto: {{ produto.0 }}</p>
+                    <p>Preço: R$ {{ produto.1|floatformat:2 }}</p>
+                </a>
             </li>
         {% endfor %}
     </ul>
